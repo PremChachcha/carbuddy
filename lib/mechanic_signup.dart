@@ -204,8 +204,10 @@ class _MechanicSignupState extends State<MechanicSignup> {
                     height: 55,
                     child: ElevatedButton(
                       onPressed: () {
-                        if(_formKey.currentState!.validate()){}
-                        //Navigator.push(context, MaterialPageRoute(builder: (context) => CustomerSignup()));
+                        if(_formKey.currentState!.validate()) {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => LoginPage()));
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple,

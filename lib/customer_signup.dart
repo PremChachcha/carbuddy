@@ -219,18 +219,23 @@ class _CustomerSignupState extends State<CustomerSignup> {
                     height: 55,
                     child: ElevatedButton(
                       onPressed: () {
-                        if(_formKey.currentState!.validate()){}
+                        if (_formKey.currentState!.validate()) {
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => LoginPage()));
 
                         //database
-                        CollectionReference collRef = FirebaseFirestore.instance.collection('customer');
+                        CollectionReference collRef = FirebaseFirestore.instance
+                            .collection('customer');
                         collRef.add({
-                          'name' : nameController.text,
-                          'email' : emailController,
-                          'password' : passwordController,
+                          'name': nameController.text,
+                          'email': emailController,
+                          'password': passwordController,
                         });
-                        //Navigator.push(context, MaterialPageRoute(builder: (context) => CustomerSignup()));
+                        //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                      }
                       },
-                      
+
+
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple,
                         shape: RoundedRectangleBorder(

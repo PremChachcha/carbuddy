@@ -1,3 +1,4 @@
+import 'package:carbuddy/home%20page/home_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'customer_signup.dart';
@@ -30,9 +31,18 @@ class _LoginPageState extends State<LoginPage> {
 
   //submit form validation
 
-  void _submitForm(){
-    if(_formKey.currentState!.validate()){}
+  // void _submitForm(){
+  //   if(_formKey.currentState!.validate()){}
+  // }
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    }
   }
+
   String? _validateEmail(value){
     if(value!.isEmpty){
       return 'Please enter an email';
