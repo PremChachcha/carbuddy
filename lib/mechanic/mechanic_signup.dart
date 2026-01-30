@@ -226,30 +226,7 @@ class _MechanicSignupState extends State<MechanicSignup> {
                   //const Spacer(),
                   const SizedBox(height: 155,),
 
-                  /// Sign Up
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Already have an account? ",
-                        style: TextStyle(fontFamily: 'PoppinsR'),
-                      ),
-                      InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return LoginPage();
-                          }),
-                          );
-                        },
-                        child: Text("Login",
-                          style: TextStyle(
-                              color: Colors.deepPurple,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Poppins'
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+
                 ],
               ),
             ),

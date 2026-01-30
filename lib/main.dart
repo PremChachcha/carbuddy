@@ -1,7 +1,13 @@
 import 'package:carbuddy/login_page.dart';
+import 'package:carbuddy/selection.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -27,7 +33,7 @@ class FirstScreen extends StatelessWidget {
         height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF7E57C2), Color(0xFFD1C4E9)],
+            colors: [Color(0xFF1A0B2E), Color(0xFF6A1B9A)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -76,7 +82,7 @@ class FirstScreen extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(30),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context) => LoginPage()));
+                  Navigator.push(context, MaterialPageRoute(builder:(context) => WelcomeScreen()));
                 },
                 child: Container(
                   width: double.infinity,
